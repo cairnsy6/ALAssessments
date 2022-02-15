@@ -1,0 +1,138 @@
+html {
+  background: url("background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+main {
+  display: grid;
+  grid-template-areas: "title-side questions-side";
+  grid-template-columns: 1fr 1fr;
+}
+
+hr {
+  border: solid 1px white;
+  height: 1px;
+  background: rgb(247, 240, 240);
+  width: 20%;
+  margin-left: 0;
+}
+
+details > summary {
+  font-weight: 700;
+  list-style: none;
+  padding-right: 2rem;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  position: absolute;
+  right: 50px;
+  content: "▼";
+}
+details[open] summary:after {
+  content: "▲";
+}
+
+details > p {
+  margin-top: 1rem;
+  color: grey;
+}
+
+/* Classes */
+
+.bottom-left-area {
+  position: absolute;
+  bottom: 10px;
+}
+
+/* IDS left side*/
+
+#title-side-screen {
+  margin-left: 7%;
+  grid-area: title-side;
+}
+
+#logo {
+  margin-top: 3rem;
+  position: absolute;
+  top: 3;
+}
+
+#title {
+  margin-top: 40%;
+  font-size: 4rem;
+  margin-right: 2rem;
+}
+
+/* IDS right side*/
+
+#questions-side-screen {
+  background-color: white;
+  margin-top: -1rem;
+  margin-bottom: 14rem;
+  margin-right: -1rem;
+  grid-area: questions-side;
+  color: black;
+  padding: 2rem 4rem 2rem 4rem;
+  height: 100%;
+}
+
+#questions-side-screen h1 {
+  margin-bottom: 8rem;
+  margin-top: 2rem;
+}
+
+#questions-side-screen details {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+#questions-side-screen hr {
+  color: lightgrey;
+  background: rgb(199, 196, 196);
+  width: 100%;
+}
+
+/* Choose to only do one media query as the screens look good as you go smaller */
+/* except when you get to large mobile devices */
+
+@media screen and (min-device-width: 0px) and (max-device-width: 425px) {
+  main {
+    grid-template-areas:
+      "title-side"
+      "questions-side";
+  }
+
+  #title-side-screen {
+    margin-bottom: 20rem;
+  }
+
+  #questions-side-screen {
+    width: 100%;
+    margin-top: 4rem;
+    margin-left: -1rem;
+    margin-right: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  details > summary {
+    font-weight: 700;
+    list-style: none;
+    padding-right: 2rem;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::after {
+    display: none;
+  }
+}
